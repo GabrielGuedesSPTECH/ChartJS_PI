@@ -16,18 +16,16 @@
             width: 40vw;
             height: 40vh;
         }
-        .chart_temp1{
+        /* .chart_temp1{
             display: flex;
             position: relative;
             width: 20vw;
             height: 20vh;
-        }
+        } */
     </style>
 </head>
 
 <body>
-        <div class="container">
-        </div>
 
     <div id="div_charts">
         <canvas class="chart_temp" id="myChart"></canvas>
@@ -35,9 +33,9 @@
     <div id="div_charts">
         <canvas class="chart_temp" id="myChart2"></canvas>
     </div>
-    <div id="div_charts">
+    <!-- <div id="div_charts">
         <canvas class="chart_temp1" id="myChart3"></canvas>
-    </div>
+    </div> -->
 </body >
 </html>
 
@@ -48,24 +46,32 @@
         type: 'line',
         data: {
             labels:[
-                    'Janeiro',
-                    'Fevereiro',
-                    'Março',
-                    'Abril',
-                    'Maio',
-                    'Junho'],
+                    '12:00',
+                    '13:00',
+                    '14:00',
+                    '15:00',
+                    '16:00',
+                    '17:00'],
             datasets: [{
                 label: 'Temperatura',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [30, 29, 28, 25, 22, 23],
                 borderWidth: 1,
                 borderColor : '#ff5349',
                 backgroundColor: '#ff5349'
+            },
+                {
+                label: 'Umidade',
+                data: [30 +50, 82,80, 85 , 80, 83],
+                borderWidth: 1,
+                borderColor : '#89CFF0',
+                backgroundColor: '#89CFF0'
             }]
         },
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    suggestedMin: 20,
+                    
                 }
             }
         }
@@ -83,8 +89,15 @@
                     'Maio',
                     'Junho'],
             datasets: [{
+                label: 'Temperatura',
+                data: [22, 24, 27, 23, 20, 18],
+                borderWidth: 1,
+                borderColor : '#ff5349',
+                backgroundColor: '#ff5349'
+            },
+                {
                 label: 'Umidade',
-                data: [10, 15,17 , 20, 14, 13],
+                data: [90, 89,93, 87 , 88, 82],
                 borderWidth: 1,
                 borderColor : '#89CFF0',
                 backgroundColor: '#89CFF0'
@@ -93,37 +106,37 @@
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    suggestedMin: 20,
                 }
             }
         }
     });
-    const ctx2 = document.getElementById('myChart3');
+//     const ctx2 = document.getElementById('myChart3');
 
-new Chart(ctx2, {
-    type: 'polarArea',
-    data: {
-        labels:[
-                'Alto',
-                'Moderado',
-                'Normal',
-                'Baixo',
-                'Nulo'],
-        datasets: [{
-            label: 'Risco de Perda',
-            data: [5, 7, 10, 20, 30],
-            borderWidth: 1,
-            borderColor : '##FF0000',
-            backgroundColor: '#ff0000',
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
+// new Chart(ctx2, {
+//     type: 'polarArea',
+//     data: {
+//         labels:[
+//                 'Alto',
+//                 'Moderado',
+//                 'Normal',
+//                 'Baixo',
+//                 'Nulo'],
+//         datasets: [{
+//             label: 'Risco de Perda',
+//             data: [5, 7, 10, 20, 30],
+//             borderWidth: 1,
+//             borderColor : '##FF0000',
+//             backgroundColor: '#ff0000',
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             y: {
+//                 beginAtZero: true
+//             }
+//         }
+//     }
+// });
 
 </script>
