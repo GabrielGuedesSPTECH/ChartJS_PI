@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o ChartJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body{
+            display: flex;
+        }
+        .chart_temp{
+            display: flex;
+            position: relative;
+            width: 40vw;
+            height: 40vh;
+        }
+        .chart_temp1{
+            display: flex;
+            position: relative;
+            width: 20vw;
+            height: 20vh;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="container">
+        </div>
+
+    <div id="div_charts">
+        <canvas class="chart_temp" id="myChart"></canvas>
+    </div>
+    <div id="div_charts">
+        <canvas class="chart_temp" id="myChart2"></canvas>
+    </div>
+    <div id="div_charts">
+        <canvas class="chart_temp1" id="myChart3"></canvas>
+    </div>
+</body >
+</html>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels:[
+                    'Janeiro',
+                    'Fevereiro',
+                    'Março',
+                    'Abril',
+                    'Maio',
+                    'Junho'],
+            datasets: [{
+                label: 'Temperatura',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1,
+                borderColor : '#ff5349',
+                backgroundColor: '#ff5349'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    const ctx1 = document.getElementById('myChart2');
+
+    new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels:[
+                    'Janeiro',
+                    'Fevereiro',
+                    'Março',
+                    'Abril',
+                    'Maio',
+                    'Junho'],
+            datasets: [{
+                label: 'Umidade',
+                data: [10, 15,17 , 20, 14, 13],
+                borderWidth: 1,
+                borderColor : '#89CFF0',
+                backgroundColor: '#89CFF0'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    const ctx2 = document.getElementById('myChart3');
+
+new Chart(ctx2, {
+    type: 'polarArea',
+    data: {
+        labels:[
+                'Alto',
+                'Moderado',
+                'Normal',
+                'Baixo',
+                'Nulo'],
+        datasets: [{
+            label: 'Risco de Perda',
+            data: [5, 7, 10, 20, 30],
+            borderWidth: 1,
+            borderColor : '##FF0000',
+            backgroundColor: '#ff0000',
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+</script>
